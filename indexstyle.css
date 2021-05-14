@@ -1,0 +1,241 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700;800&display=swap');
+
+* 
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito', sans-serif;
+    
+}
+
+section
+{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    padding: 100px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    overflow-x:hidden;
+}
+
+
+.content{
+    position: relative;
+}
+
+.content .textBox{
+    position: relative;
+    max-width: 550px;
+}
+
+.content .textBox h2{
+    color:#673DE6;
+    font-size: 3.5em;
+    margin-bottom: 10px;
+    line-height: 1.2em;
+    font-weight: 700;
+    opacity: 0;
+    animation: slide_right 0.5s linear forwards;
+    animation-delay: 1s;
+}
+
+
+@keyframes slide_right{
+    0%{
+        transform: translateX(100px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
+.content .textBox p{
+    color:#333;
+    font-size: 1.2em;
+    opacity: 0;
+    animation: slide_left 0.5s linear forwards;
+    animation-delay: 1.25s;
+}
+
+.content .textBox a{
+    display: inline-block;
+    margin-top: 20px;
+    padding: 15px 30px;
+    background:#333;
+    color: #fff;
+    font-size: 1.2em;
+    border-radius: 40px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-decoration:none;
+    opacity: 0;
+    animation: slide_top 0.5s linear forwards;
+    animation-delay: 1.5s;
+}
+
+.sci
+{
+    position: absolute;
+    bottom: 40px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.sci li{
+    list-style: none;
+}
+
+.sci li a{
+    position: relative;
+    display: inline-block;
+    margin-right: 15px;
+    width:50px;
+    height: 50px;
+    background:#683EE6;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.2s ease-in-out;
+    opacity: 0;
+    animation: slide_right 0.3s linear forwards;
+    animation-delay: calc(0.1s * var(--i));
+}
+
+.sci li a img{
+    filter: invert(1);
+    transform: scale(0.5);
+}
+
+.sci li a:hover{
+    background:#333;
+    transform:translateY(-10px) ;
+}
+
+.heroimg{
+    position:absolute;
+    bottom: 0;
+    right:0;
+    max-width:800px;
+    opacity: 0;
+    animation: fade_in 0.1s linear forwards;
+    animation-delay: 1s;
+}
+
+@keyframes fade_in{
+    0%{ 
+        opacity: 0;
+    }
+    100%{ 
+        opacity: 1;
+    }
+}
+
+.fab-container{
+    position: fixed;
+    bottom:50px;
+    right:50px;
+    z-index: 999;
+    cursor:pointer;
+}
+
+.fab-icon-holder{
+    width:50px;
+    height:50px;
+    border-radius: 100%;
+    background:#333;
+}
+
+.fab-icon-holder:hover{
+    opacity: 0.8;
+}
+
+.fab-icon-holder i{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    height:100%;
+    font-size: 25px;
+    color:#fff;
+}
+
+.fab{
+    width: 60px;
+    height:60px;
+    background: #333;
+}
+
+.fab-options{
+    list-style-type: none;
+    margin: 0;
+    position: absolute;
+    bottom:70px;
+    right:0;
+    opacity:0;
+    transition: all 3 ease;
+    transform: scale(0.5);
+    transform-origin: 85% bottom;
+}
+
+.fab:hover + .fab-options, .fab-options:hover{
+    opacity: 1;
+    transform: scale(1);
+}
+
+.fab-options li{
+    display: flex;
+    justify-content: flex-end;
+    padding: 5px;
+}
+
+.fab-label{
+    padding: 2px 5px;
+    align-self: center;
+    user-select: none;
+    white-space: nowrap;
+    border-radius: 3px;
+    font-size: 16px;
+    background: #fff;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+    margin-right: 10px;
+}
+
+/* Styles For Responsiveness */
+
+@media(max-width:991px)
+{
+    section{
+        padding: 150px 20px;
+    }
+
+    
+    .heroimg{
+        max-width:400px;
+    }
+
+    .content .textBox h2{
+        font-size: 2.5em;
+    }
+
+    .content .textBox p{
+        font-size: 1em;
+    }
+}
+
+
+@media(max-width:661px)
+{
+     .heroimg{
+         opacity: 0.4 !important;
+     }
+}
+
+
+/* Styles For Auto Popup */
+
