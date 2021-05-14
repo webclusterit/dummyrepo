@@ -8,7 +8,7 @@
 </head>
 
 <body>
- <video src="video.webm"></video>
+  
 <section>
    <div class="container">
        
